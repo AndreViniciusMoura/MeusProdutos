@@ -15,5 +15,6 @@ namespace DevIO.Business.Models.Produtos
 
         /* EF Relations */
         public Fornecedor Fornecedor { get; set; }
+        public Guid FornecedorId { get; set; }
     }
 }
