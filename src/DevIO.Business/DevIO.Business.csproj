@@ -31,19 +31,32 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FluentValidation.9.2.2\lib\net461\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Data\IRepository.cs" />
     <Compile Include="Core\Models\Entity.cs" />
+    <Compile Include="Core\Services\BaseService.cs" />
+    <Compile Include="Core\Validations\Documentos\ValidacaoDocs.cs" />
     <Compile Include="Models\Fornecedores\Endereco.cs" />
     <Compile Include="Models\Fornecedores\Fornecedor.cs" />
-    <Compile Include="Models\Fornecedores\Interfaces\IEnderecoRepository.cs" />
-    <Compile Include="Models\Fornecedores\Interfaces\IFornecedorRepository.cs" />
+    <Compile Include="Models\Fornecedores\Interfaces\Repository\IEnderecoRepository.cs" />
+    <Compile Include="Models\Fornecedores\Interfaces\Repository\IFornecedorRepository.cs" />
     <Compile Include="Models\Fornecedores\Enums\TipoFornecedor.cs" />
+    <Compile Include="Models\Fornecedores\Interfaces\Service\IFornecedorService.cs" />
+    <Compile Include="Models\Fornecedores\Services\FornecedorService.cs" />
+    <Compile Include="Models\Fornecedores\Validations\EnderecoValidation.cs" />
+    <Compile Include="Models\Fornecedores\Validations\FornecedorValidation.cs" />
     <Compile Include="Models\Produtos\Interfaces\IProdutoRepository.cs" />
     <Compile Include="Models\Produtos\Produto.cs" />
+    <Compile Include="Models\Produtos\Validations\ProdutoValidation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
