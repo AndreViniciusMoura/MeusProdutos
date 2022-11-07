@@ -1,4 +1,5 @@
-﻿using DevIO.Business.Core.Services;
+﻿using DevIO.Business.Core.Notificacoes;
+using DevIO.Business.Core.Services;
 using DevIO.Business.Models.Produtos.Validations;
 using System;
 using System.Threading.Tasks;
@@ -9,7 +10,8 @@ namespace DevIO.Business.Models.Produtos.Interfaces
     {
         private readonly IProdutoRepository _produtoRepository;
 
-        public ProdutoService(IProdutoRepository produtoRepository)
+        public ProdutoService(IProdutoRepository produtoRepository,
+                              INotificador notificador) : base(notificador)
         {
             _produtoRepository = produtoRepository;
         }
