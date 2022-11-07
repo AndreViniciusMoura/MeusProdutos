@@ -51,6 +51,8 @@
     <Compile Include="Models\Fornecedores\Validations\EnderecoValidation.cs" />
     <Compile Include="Models\Fornecedores\Validations\FornecedorValidation.cs" />
     <Compile Include="Models\Produtos\Interfaces\IProdutoRepository.cs" />
+    <Compile Include="Models\Produtos\Interfaces\IProdutoService.cs" />
+    <Compile Include="Models\Produtos\Services\ProdutoService.cs" />
     <Compile Include="Models\Produtos\Produto.cs" />
     <Compile Include="Models\Produtos\Validations\ProdutoValidation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
