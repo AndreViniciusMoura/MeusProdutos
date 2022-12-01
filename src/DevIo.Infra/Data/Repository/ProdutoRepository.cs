@@ -1,4 +1,5 @@
-﻿using DevIO.Business.Models.Produtos;
+﻿using DevIo.Infra.Data.Context;
+using DevIO.Business.Models.Produtos;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -9,6 +10,8 @@ namespace DevIo.Infra.Data.Repository
 {
     public class ProdutoRepository : Repository<Produto>, IProdutoRepository
     {
+        public ProdutoRepository(MeusProdutosDbContext context): base(context) { }
+
         public async Task<Produto> ObterProdutoFornecedor(Guid id) =>
             await Db.Produtos.AsNoTracking()
             .Include(f => f.Fornecedor)

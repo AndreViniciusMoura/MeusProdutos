@@ -15,9 +15,9 @@ namespace DevIo.Infra.Data.Repository
         protected readonly MeusProdutosDbContext Db;
         protected readonly DbSet<TEntity> DbSet;
 
-        protected Repository()
+        protected Repository(MeusProdutosDbContext db)
         {
-            Db = new MeusProdutosDbContext();
+            Db = db;
             DbSet = Db.Set<TEntity>();
         }
 
