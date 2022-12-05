@@ -34,10 +34,8 @@ namespace DevIO.AppMvc.Controllers
         {
             var produtoViewModel = await ObterProduto(id);
 
-            if (produtoViewModel == null)
-            {
-                return HttpNotFound();
-            }
+            if (produtoViewModel is null) return HttpNotFound();
+
             return View(produtoViewModel);
         }
 
@@ -69,8 +67,7 @@ namespace DevIO.AppMvc.Controllers
         {
             var produtoViewModel = await ObterProduto(id);
 
-            if (produtoViewModel == null)
-                return HttpNotFound();
+            if (produtoViewModel is null) return HttpNotFound();
 
             return View(produtoViewModel);
         }
@@ -96,8 +93,7 @@ namespace DevIO.AppMvc.Controllers
         {
             var produtoViewModel = await ObterProduto(id);
 
-            if (produtoViewModel == null)
-                return HttpNotFound();
+            if (produtoViewModel is null) return HttpNotFound();
 
             return View(produtoViewModel);
         }

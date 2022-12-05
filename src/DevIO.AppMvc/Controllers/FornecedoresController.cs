@@ -107,5 +107,16 @@ namespace DevIO.AppMvc.Controllers
 
         private async Task<FornecedorViewModel> ObterFornecedorProdutosEndereco(Guid id) =>
             _mapper.Map<FornecedorViewModel>(await _fornecedorRepository.ObterFornecedorProdutosEndereco(id));
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                _fornecedorRepository.Dispose();
+                _fornecedorService.Dispose();
+            }
+
+            base.Dispose(disposing);
+        }
     }
 }
