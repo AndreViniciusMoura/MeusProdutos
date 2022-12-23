@@ -2,7 +2,6 @@
 using DevIO.AppMvc.ViewModels;
 using DevIO.Business.Models.Fornecedores;
 using DevIO.Business.Models.Fornecedores.Interfaces.Service;
-using Microsoft.Owin.Security.Provider;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -26,6 +25,16 @@ namespace DevIO.AppMvc.Controllers
         [Route("lista-de-fornecedores")]
         public async Task<ActionResult> Index() =>
             View(_mapper.Map<IEnumerable<FornecedorViewModel>>(await _fornecedorRepository.ObterTodos()));
+
+        [Route("dados-do-fornecedore/{id:guid}")]
+        public async Task<ActionResult> Details(Guid id)
+        {
+            var fornecedorViewModel = await ObterFornecedorEndereco(id);
+
+            if (fornecedorViewModel is null) return HttpNotFound();
+
+            return View(fornecedorViewModel);
+        }
 
 
         [Route("novo-fornecedor")]

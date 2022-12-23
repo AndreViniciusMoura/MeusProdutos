@@ -26,7 +26,7 @@ namespace DevIO.AppMvc.ViewModels
         public string Documento { get; set; }
 
         [DisplayName("Tipo")]
-        public int Tipofornecedor { get; set; }
+        public int TipoFornecedor { get; set; }
 
         public EnderecoViewModel Endereco { get; set; }
 
